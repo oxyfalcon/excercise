@@ -1,0 +1,9 @@
+
+Call the below API and list the title, artist_display,fiscal_year,
+and artist_id using JSON parsing.
+https://api.artic.edu/api/v1/artworks?page=1&limit=5
+
+Implement Login page with Email, Password and Login button. There should be proper validation for each fields. Once user logged in Implement pagination functionality. Increase the page every time for pagination and use a page size of 5 for loading.
+Once data is fetched, the app should work without the internet. Use a local database for offline data loading. Implement a pull to refresh functionality.
+Implement offline search functionality.
+Use proper Software Architecture Pattern, State Management.
