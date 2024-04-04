@@ -54,7 +54,5 @@ class DatabaseOperations {
     return userList;
   }
 
-  Future<void> deleteAll() async{
-    await database.delete(tableName);
-  }
+  Future<void> deleteAll() async => await database.delete(tableName);
 }

@@ -1,3 +1,4 @@
+import 'package:excercise/l10n/app_localizations.dart';
 import 'package:excercise/model/user_model.dart';
 import 'package:excercise/utils/config.dart';
 import 'package:excercise/view_model/provider.dart';
@@ -16,8 +17,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
+      locale: const Locale('es'),
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
@@ -57,7 +61,7 @@ class _MyHomePageState extends ConsumerState<MyHomePage> {
         appBar: AppBar(
             elevation: 0,
             backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-            title: const Text("Pagination Exercise"),
+            title: Text(AppLocalizations.of(context)!.helloWorld),
             centerTitle: true),
         body: RefreshIndicator(
           child: CustomScrollView(
