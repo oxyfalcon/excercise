@@ -1,10 +1,9 @@
 library config;
 
-import 'package:excercise/main.dart';
 import 'package:excercise/model/user_model.dart';
 import 'package:excercise/utils/database_values.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:excercise/view/auth_gate/auth_gate.dart';
+import 'package:flutter/material.dart';
 import 'package:sqflite/sqflite.dart';
 
 part '../model/dataRepository/data_repository.dart';
@@ -30,6 +29,6 @@ class Config {
   // entry
   Future<void> initialize() async {
     await createDatabase();
-    runApp(const ProviderScope(child: MyApp()));
+    runApp(const AuthGate());
   }
 }

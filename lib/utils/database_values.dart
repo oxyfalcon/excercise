@@ -1,8 +1,9 @@
-enum TableColumn{
+enum TableColumn {
   fiscalYear("fiscal_year"),
   artistDisplay("artist_display"),
   title("title"),
   pageNumber("page_number");
+
   const TableColumn(this.name);
   final String name;
 }
