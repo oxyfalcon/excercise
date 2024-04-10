@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:excercise/model/user_model.dart';
 import 'package:excercise/utils/config.dart';
+import 'package:excercise/utils/database_values.dart';
 import 'package:http/http.dart' as http;
 
 class Api {
@@ -32,7 +33,7 @@ class Api {
           userModelList.add(UserModel.fromJson(i, pageNumber));
         }
         if (pageNumber == 1) {
-          await DatabaseOperations().deleteAll();
+          await DataRepository().database.delete(tableName);
         }
         await DatabaseOperations()
             .insertUserModelToDb(userModelList, pageNumber);
